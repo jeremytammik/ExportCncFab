@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>ExportCncFab</Name>
+    <Assembly>ExportCncFab.dll</Assembly>
+    <FullClassName>ExportCncFab.App</FullClassName>
+    <ClientId>78dc5c38-9504-4e41-bcdf-e1d1e52a2dfb</ClientId>
+    <VendorId>TBC_</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
