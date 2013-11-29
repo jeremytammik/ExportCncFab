@@ -159,7 +159,8 @@ namespace ExportCncFab
       string sharedParamsFileName
         = app.SharedParametersFilename;
 
-      if( 0 == sharedParamsFileName.Length )
+      if( null == sharedParamsFileName
+        || 0 == sharedParamsFileName.Length )
       {
         string path = Path.GetTempPath();
 
