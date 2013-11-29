@@ -236,6 +236,13 @@ namespace ExportCncFab
             r => r.ElementId ) );
       }
 
+      if( 0 == ids.Count )
+      {
+        ErrorMsg( "No valid parts selected." );
+
+        return Result.Failed;
+      }
+
       // Check for shared parameters 
       // to record export history
 
@@ -245,7 +252,7 @@ namespace ExportCncFab
 
       if( !exportParameters.IsValid )
       {
-        ErrorMsg( "Pleas initialise the CNC fabrication "
+        ErrorMsg( "Please initialise the CNC fabrication "
           + "export history shared parameters before "
           + "launching this command." );
 
