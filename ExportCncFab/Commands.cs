@@ -10,10 +10,11 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
 using Autodesk.Revit.UI.Selection;
 using System.IO;
-#endregion
+#endregion // Namespaces
 
 namespace ExportCncFab
 {
+  #region CmdDxf - Export to DXF
   [Transaction( TransactionMode.Manual )]
   public class CmdDxf : IExternalCommand
   {
@@ -55,7 +56,7 @@ namespace ExportCncFab
     /// Default folder for test files, RVT project
     /// to load and output folder for DXF and SAT.
     /// </summary>
-    static string _folder 
+    static string _folder
       = "Z:\\a\\src\\revit\\export_cnc_fab\\test";
 
     static void InfoMsg( string msg )
@@ -246,8 +247,8 @@ namespace ExportCncFab
       // Check for shared parameters 
       // to record export history
 
-      ExportParameters exportParameters 
-        = new ExportParameters( 
+      ExportParameters exportParameters
+        = new ExportParameters(
           doc.GetElement( ids[0] ) );
 
       if( !exportParameters.IsValid )
@@ -273,10 +274,6 @@ namespace ExportCncFab
         uiapp.DialogBoxShowing
           += new EventHandler<DialogBoxShowingEventArgs>(
             OnDialogBoxShowing );
-
-        //DXFExportOptions predefinedOptions 
-        //  = DXFExportOptions.GetPredefinedOptions( 
-        //    doc, ??? );
 
         object opt = exportToSatFormat
           ? (object) new SATExportOptions()
@@ -328,7 +325,7 @@ namespace ExportCncFab
             {
               Element level = doc.GetElement( host.LevelId );
 
-              filename = level.Name.Replace( ' ', '_' ) 
+              filename = level.Name.Replace( ' ', '_' )
                 + "_" + filename;
             }
 
@@ -353,7 +350,9 @@ namespace ExportCncFab
               tx.Start( "Export Wall Part "
                 + partId.ToString() );
 
-              view.IsolateElementTemporary( partId ); // requires transaction
+              // This call requires a transaction.
+
+              view.IsolateElementTemporary( partId );
 
               //List<ElementId> unhideIds = new List<ElementId>( 1 );
               //unhideIds.Add( partId );
@@ -377,12 +376,12 @@ namespace ExportCncFab
               //doc.Export( _folder, filename, viewSet, 
               //  (SATExportOptions) opt ); // 2013
 
-              doc.Export( _folder, filename, viewIds, 
+              doc.Export( _folder, filename, viewIds,
                 (SATExportOptions) opt ); // 2014
             }
             else
             {
-              doc.Export( _folder, filename, viewIds, 
+              doc.Export( _folder, filename, viewIds,
                 (DXFExportOptions) opt );
             }
 
@@ -426,7 +425,6 @@ namespace ExportCncFab
 
         tx.Commit();
       }
-
       return Result.Succeeded;
     }
 
@@ -438,7 +436,9 @@ namespace ExportCncFab
       return Execute2( commandData, false );
     }
   }
+  #endregion // CmdDxf - Export to DXF
 
+  #region CmdSat - Export to SAT
   [Transaction( TransactionMode.Manual )]
   public class CmdSat : IExternalCommand
   {
@@ -450,9 +450,11 @@ namespace ExportCncFab
       return CmdDxf.Execute2( commandData, true );
     }
   }
+  #endregion // CmdSat - Export to SAT
 
+  #region CmdCreateSharedParameters
   [Transaction( TransactionMode.Manual )]
-  public class CmdCreateSharedParameters 
+  public class CmdCreateSharedParameters
     : IExternalCommand
   {
     public Result Execute(
@@ -468,4 +470,5 @@ namespace ExportCncFab
       return Result.Succeeded;
     }
   }
+  #endregion // CmdCreateSharedParameters
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿#region Namespaces
+using System;
 using System.Windows.Forms;
+#endregion // Namespaces
 
 namespace ExportCncFab
 {

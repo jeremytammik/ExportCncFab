@@ -1,8 +1,10 @@
-﻿using System;
+﻿#region Namespaces
+using System;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.ApplicationServices;
 using System.IO;
 using System.Collections.Generic;
+#endregion // Namespaces
 
 namespace ExportCncFab
 {
@@ -12,6 +14,10 @@ namespace ExportCncFab
   /// </summary>
   class ExportParameters
   {
+    /// <summary>
+    /// Define the user visible export 
+    /// history shared parameter names.
+    /// </summary>
     const string _is_exported = "CncFabIsExported";
     const string _exported_first = "CncFabExportedFirst";
     const string _exported_last = "CncFabExportedLast";
@@ -20,6 +26,10 @@ namespace ExportCncFab
     //Guid _guid_exported_first;
     //Guid _guid_exported_last;
 
+    /// <summary>
+    /// Store the export history 
+    /// shared parameter definitions.
+    /// </summary>
     Definition _definition_is_exported = null;
     Definition _definition_exported_first = null;
     Definition _definition_exported_last = null;
@@ -27,39 +37,40 @@ namespace ExportCncFab
     Document _doc = null;
     List<ElementId> _ids = null;
 
-    static bool SetDefinition(
-      ref Definition definition,
+    /// <summary>
+    /// Return the parameter definition from
+    /// the given element and parameter name.
+    /// </summary>
+    static Definition GetDefinition(
       Element e,
       string parameter_name )
     {
-      Parameter p = e.get_Parameter( parameter_name );
+      Parameter p = e.get_Parameter(
+        parameter_name );
 
-      bool rc = ( null != p );
+      Definition d = ( null == p )
+        ? null
+        : p.Definition;
 
-      if( rc )
-      {
-        definition = p.Definition;
-      }
-
-      return rc;
+      return d;
     }
 
     /// <summary>
-    /// Initialise the shared parameter definitions 
+    /// Initialise the shared parameter definitions
     /// from a given sample element.
     /// </summary>
-    /// <param name="e"></param>
     public ExportParameters( Element e )
     {
-      bool rc
-        = SetDefinition( ref _definition_is_exported,
-          e, _is_exported )
-        && SetDefinition( ref _definition_exported_first,
-          e, _exported_first )
-        && SetDefinition( ref _definition_exported_last,
-          e, _exported_last );
+      _definition_is_exported = GetDefinition( 
+        e, _is_exported );
 
-      if( rc )
+      _definition_exported_first = GetDefinition( 
+        e, _exported_first );
+
+      _definition_exported_last = GetDefinition( 
+        e, _exported_last );
+
+      if( IsValid )
       {
         _doc = e.Document;
         _ids = new List<ElementId>();
@@ -94,14 +105,14 @@ namespace ExportCncFab
     /// Update the CNC fabrication export 
     /// history for the given element.
     /// </summary>
-    void UpdateExportHistory( 
+    void UpdateExportHistory(
       Element e )
     {
       DateTime now = DateTime.Now;
 
-      string s = string.Format( 
+      string s = string.Format(
         "{0:4}-{1:02}-{2:02}T{3:02}.{4:02}.{5:02}.{6:03}",
-        now.Year, now.Month, now.Day, 
+        now.Year, now.Month, now.Day,
         now.Hour, now.Minute, now.Second, now.Millisecond );
 
       s = now.ToString( "yyyy-MM-ddTHH:mm:ss.fff" );
@@ -109,7 +120,7 @@ namespace ExportCncFab
       e.get_Parameter( _definition_is_exported )
         .Set( 1 );
 
-      Parameter p = e.get_Parameter( 
+      Parameter p = e.get_Parameter(
         _definition_exported_first );
 
       string s2 = p.AsString();
@@ -131,7 +142,7 @@ namespace ExportCncFab
     {
       foreach( ElementId id in _ids )
       {
-        UpdateExportHistory( 
+        UpdateExportHistory(
           _doc.GetElement( id ) );
       }
     }
@@ -164,7 +175,7 @@ namespace ExportCncFab
       {
         string path = Path.GetTempPath();
 
-        path = Path.Combine( path, 
+        path = Path.Combine( path,
           _shared_parameters_filename );
 
         StreamWriter stream;
