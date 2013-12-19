@@ -12,7 +12,7 @@ namespace ExportCncFab
 {
   class App : IExternalApplication
   {
-    public const string Caption 
+    public const string Caption
       = "Export to CNC Fabrication";
 
     static string _namespace_prefix
@@ -26,13 +26,11 @@ namespace ExportCncFab
     const string _class_name2 = "CmdSat";
     const string _class_name3 = "CmdCreateSharedParameters";
 
-    const string _tooltip_format 
+    const string _tooltip_format
       = "Export to CNC Fabrication in {0} format";
 
     const string _tooltip_long_description_format
       = "Export Revit parts to CNC Fabrication in {0} format.";
-
-    //static string _text = AboutBox.AssemblyProduct;
 
     /// <summary>
     /// Load a new icon bitmap from embedded resources.
@@ -60,7 +58,7 @@ namespace ExportCncFab
       return img;
     }
 
-    public Result OnStartup( 
+    public Result OnStartup(
       UIControlledApplication a )
     {
       Assembly exe = Assembly.GetExecutingAssembly();
@@ -104,7 +102,7 @@ namespace ExportCncFab
         _name3, _name3, path,
         _namespace_prefix + _class_name3 );
 
-      d.ToolTip 
+      d.ToolTip
         = "Create shared parameters for tracking export history";
 
       d.LongDescription
@@ -114,7 +112,7 @@ namespace ExportCncFab
         + " * CncFabExportedFirst - Text timestamp ISO 8601\r\n"
         + " * CncFabExportedLast - Text timestamp ISO 8601";
 
-      d.ToolTipImage = NewBitmapImage( exe, 
+      d.ToolTipImage = NewBitmapImage( exe,
         "cnc_icon_full_size.png" );
 
       p.AddItem( d );
