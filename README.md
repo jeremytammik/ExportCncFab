@@ -1,12 +1,12 @@
 # ExportCncFab
 
-Revit Add-In to export Revit wall parts to DXF or SAT for CNC fabrication.
+Revit add-in to export Revit wall parts to DXF or SAT for CNC fabrication.
 
 For more information, please refer to
 [The Building Coder](http://thebuildingcoder.typepad.com) and the 12-minute
 [Revit to CNC Direct YouTube video](https://www.youtube.com/watch?v=uNJ9RTppqoU).
 
-Detailed articles describing some implementation aspects include:
+Detailed articles describing various implementation aspects include:
 
 - [Export Wall Parts Individually to DXF](http://thebuildingcoder.typepad.com/blog/2013/03/export-wall-parts-individually-to-dxf.html)
 - [ExportCncFab on GitHub](http://thebuildingcoder.typepad.com/blog/2013/10/exportcncfab-on-github-and-revitlookup-update.html)
