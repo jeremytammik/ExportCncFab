@@ -155,18 +155,22 @@ namespace ExportCncFab
       }
     }
 
-  static Definition CreateNewDefinition(
-    DefinitionGroup group,
-    string parameter_name,
-    ParameterType parameter_type )
-  {
-    //return group.Definitions.Create( 
-    //  parameter_name, parameter_type, true ); // 2014
+    static Definition CreateNewDefinition(
+      DefinitionGroup group,
+      string parameter_name,
+      ParameterType parameter_type )
+    {
+      //return group.Definitions.Create( 
+      //  parameter_name, parameter_type, true ); // 2014
 
-    return group.Definitions.Create( 
-      new ExternalDefinitonCreationOptions( 
-        parameter_name, parameter_type ) ); // 2015
-  }
+      //return group.Definitions.Create(
+      //  new ExternalDefinitonCreationOptions(
+      //    parameter_name, parameter_type ) ); // 2015
+
+      return group.Definitions.Create(
+        new ExternalDefinitionCreationOptions(
+          parameter_name, parameter_type ) ); // 2016
+    }
 
     /// <summary>
     /// Create the shared parameters to keep track
