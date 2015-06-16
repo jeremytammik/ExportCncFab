@@ -250,16 +250,16 @@ namespace ExportCncFab
 
         definition
           = group.Definitions.get_Item( _exported_first )
-          ?? group.Definitions.Create( _exported_first,
-            ParameterType.Text, true );
+          //?? group.Definitions.Create( _exported_first, ParameterType.Text, true ); // 2014
+          ?? CreateNewDefinition( group, _exported_first, ParameterType.Text ); // 2015
 
         doc.ParameterBindings.Insert( definition, binding,
           BuiltInParameterGroup.PG_GENERAL );
 
         definition
           = group.Definitions.get_Item( _exported_last )
-          ?? group.Definitions.Create( _exported_last,
-            ParameterType.Text, true );
+          //?? group.Definitions.Create( _exported_last, ParameterType.Text, true ); // 2014
+          ?? CreateNewDefinition( group, _exported_last, ParameterType.Text ); // 2015
 
         doc.ParameterBindings.Insert( definition, binding,
           BuiltInParameterGroup.PG_GENERAL );
