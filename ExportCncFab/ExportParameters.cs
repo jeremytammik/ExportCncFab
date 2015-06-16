@@ -4,6 +4,7 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.ApplicationServices;
 using System.IO;
 using System.Collections.Generic;
+using System.Diagnostics;
 #endregion // Namespaces
 
 namespace ExportCncFab
@@ -45,12 +46,19 @@ namespace ExportCncFab
       Element e,
       string parameter_name )
     {
-      Parameter p = e.get_Parameter(
-        parameter_name );
+      //Parameter p = e.get_Parameter( parameter_name ); // 2014
 
-      Definition d = ( null == p )
+      IList<Parameter> ps = e.GetParameters( parameter_name );
+
+      int n = ps.Count;
+
+      Debug.Assert( 1 >= n,
+        "expected maximum one shared parameters "
+        + "named " + parameter_name );
+
+      Definition d = ( 0 == n )
         ? null
-        : p.Definition;
+        : ps[0].Definition;
 
       return d;
     }
@@ -61,13 +69,13 @@ namespace ExportCncFab
     /// </summary>
     public ExportParameters( Element e )
     {
-      _definition_is_exported = GetDefinition( 
+      _definition_is_exported = GetDefinition(
         e, _is_exported );
 
-      _definition_exported_first = GetDefinition( 
+      _definition_exported_first = GetDefinition(
         e, _exported_first );
 
-      _definition_exported_last = GetDefinition( 
+      _definition_exported_last = GetDefinition(
         e, _exported_last );
 
       if( IsValid )
@@ -147,6 +155,17 @@ namespace ExportCncFab
       }
     }
 
+    static Definition CreateNewDefinition(
+      DefinitionGroup group,
+      string parameter_name,
+      ParameterType parameter_type )
+    {
+      return group.Definitions.Create( parameter_name, parameter_type, true ); // 2014
+
+      //ExternalDefinitonCreationOptions opt = new ExternalDefinitonCreationOptions( ... // 2015
+
+    }
+
     /// <summary>
     /// Create the shared parameters to keep track
     /// of the CNC fabrication export history.
@@ -223,8 +242,8 @@ namespace ExportCncFab
 
         Definition definition
           = group.Definitions.get_Item( _is_exported )
-          ?? group.Definitions.Create( _is_exported,
-            ParameterType.YesNo, true );
+          //?? group.Definitions.Create( _is_exported, ParameterType.YesNo, true ); // 2014
+          ?? CreateNewDefinition( group, _is_exported, ParameterType.YesNo ); // 2015
 
         doc.ParameterBindings.Insert( definition, binding,
           BuiltInParameterGroup.PG_GENERAL );

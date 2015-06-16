@@ -136,11 +136,18 @@ namespace ExportCncFab
       List<ElementId> ids = null;
 
       Selection sel = uidoc.Selection;
+      ICollection<ElementId> selIds = sel.GetElementIds(); // 2015
 
-      if( 0 < sel.Elements.Size )
+      //if( 0 < sel.Elements.Size ) // 2014
+        
+      if( 0 < selIds.Count ) // 2015
       {
-        foreach( Element e in sel.Elements )
+        //foreach( Element e in sel.Elements ) // 2014
+
+        foreach( ElementId id in selIds ) // 2015
         {
+          Element e = doc.GetElement( id );
+
           if( !( e is Part ) )
           {
             ErrorMsg( "Please pre-select only gyp wallboard"
