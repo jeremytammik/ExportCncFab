@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "Autodesk Inc." )]
 [assembly: AssemblyProduct( "Revit ExportCncFab Add-In" )]
-[assembly: AssemblyCopyright( "Copyright 2013 © Jeremy Tammik Autodesk Inc." )]
+[assembly: AssemblyCopyright( "Copyright 2013-2015 © Jeremy Tammik Autodesk Inc." )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
@@ -32,5 +32,8 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion( "2014.0.0.12" )]
-[assembly: AssemblyFileVersion( "2014.0.0.12" )]
+//
+// 2015-06-16 2015.0.0.0 flat migration to Revit 2015
+//
+[assembly: AssemblyVersion( "2015.0.0.0" )]
+[assembly: AssemblyFileVersion( "2015.0.0.0" )]
