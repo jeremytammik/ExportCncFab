@@ -35,5 +35,7 @@ using System.Runtime.InteropServices;
 //
 // 2015-06-16 2015.0.0.0 flat migration to Revit 2015
 // 2015-06-16 2015.0.0.1 removed all obsolete API usage, compile with zero warnings
-[assembly: AssemblyVersion( "2015.0.0.1" )]
-[assembly: AssemblyFileVersion( "2015.0.0.1" )]
+// 2015-06-16 2015.0.0.2 fixed post-build event
+//
+[assembly: AssemblyVersion( "2015.0.0.2" )]
+[assembly: AssemblyFileVersion( "2015.0.0.2" )]

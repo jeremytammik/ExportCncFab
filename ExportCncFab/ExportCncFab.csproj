@@ -128,7 +128,7 @@
     <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2013\ExportCncFab.dll" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>copy "$(ProjectDir)ExportCncFab.addin" "$(AppData)\Autodesk\REVIT\Addins\2014"
-copy "$(ProjectDir)bin\debug\ExportCncFab.dll" "$(AppData)\Autodesk\REVIT\Addins\2014"</PostBuildEvent>
+    <PostBuildEvent>copy "$(ProjectDir)ExportCncFab.addin" "$(AppData)\Autodesk\REVIT\Addins\2015"
+copy "$(ProjectDir)bin\debug\ExportCncFab.dll" "$(AppData)\Autodesk\REVIT\Addins\2015"</PostBuildEvent>
   </PropertyGroup>
 </Project>
