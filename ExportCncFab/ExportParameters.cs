@@ -155,16 +155,18 @@ namespace ExportCncFab
       }
     }
 
-    static Definition CreateNewDefinition(
-      DefinitionGroup group,
-      string parameter_name,
-      ParameterType parameter_type )
-    {
-      return group.Definitions.Create( parameter_name, parameter_type, true ); // 2014
+  static Definition CreateNewDefinition(
+    DefinitionGroup group,
+    string parameter_name,
+    ParameterType parameter_type )
+  {
+    //return group.Definitions.Create( 
+    //  parameter_name, parameter_type, true ); // 2014
 
-      //ExternalDefinitonCreationOptions opt = new ExternalDefinitonCreationOptions( ... // 2015
-
-    }
+    return group.Definitions.Create( 
+      new ExternalDefinitonCreationOptions( 
+        parameter_name, parameter_type ) ); // 2015
+  }
 
     /// <summary>
     /// Create the shared parameters to keep track
