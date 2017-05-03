@@ -38,6 +38,7 @@ using System.Runtime.InteropServices;
 // 2015-06-16 2015.0.0.2 fixed post-build event
 // 2015-06-16 2016.0.0.0 flat migration to Revit 2016
 // 2017-05-03 2017.0.0.0 flat migration to Revit 2017
+// 2017-05-03 2018.0.0.0 flat migration to Revit 2018
 //
-[assembly: AssemblyVersion( "2017.0.0.0" )]
-[assembly: AssemblyFileVersion( "2017.0.0.0" )]
+[assembly: AssemblyVersion( "2018.0.0.0" )]
+[assembly: AssemblyFileVersion( "2018.0.0.0" )]
