@@ -1,5 +1,4 @@
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -10,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "Autodesk Inc." )]
 [assembly: AssemblyProduct( "Revit ExportCncFab Add-In" )]
-[assembly: AssemblyCopyright( "Copyright 2013-2015 © Jeremy Tammik Autodesk Inc." )]
+[assembly: AssemblyCopyright( "Copyright 2013-2018 © Jeremy Tammik Autodesk Inc." )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
@@ -39,6 +38,7 @@ using System.Runtime.InteropServices;
 // 2015-06-16 2016.0.0.0 flat migration to Revit 2016
 // 2017-05-03 2017.0.0.0 flat migration to Revit 2017
 // 2017-05-03 2018.0.0.0 flat migration to Revit 2018
+// 2018-01-11 2018.0.0.1 incremented copyright year to 2018
 //
-[assembly: AssemblyVersion( "2018.0.0.0" )]
-[assembly: AssemblyFileVersion( "2018.0.0.0" )]
+[assembly: AssemblyVersion( "2018.0.0.1" )]
+[assembly: AssemblyFileVersion( "2018.0.0.1" )]
