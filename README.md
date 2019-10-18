@@ -12,7 +12,7 @@ Detailed articles describing various implementation aspects include:
 - [ExportCncFab on GitHub](http://thebuildingcoder.typepad.com/blog/2013/10/exportcncfab-on-github-and-revitlookup-update.html)
 - [Driving CNC Fabrication and Shared Parameters](http://thebuildingcoder.typepad.com/blog/2013/12/driving-cnc-fabrication-and-shared-parameters.html)
 - [CNC Direct &ndash; Export Wall Parts to DXF and SAT](https://thebuildingcoder.typepad.com/blog/2015/06/cnc-direct-export-wall-parts-to-dxf-and-sat.html)
-- [ExportCncFab 2018](https://thebuildingcoder.typepad.com/blog/2018/01/areaload-force-direction-cmake-sdk-access.html#5)
+- [Migration to Revit 2018](https://thebuildingcoder.typepad.com/blog/2018/01/areaload-force-direction-cmake-sdk-access.html#5)
 
 ## Author
 
