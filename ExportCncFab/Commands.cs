@@ -288,7 +288,7 @@ namespace ExportCncFab
 
         //opt.FileVersion = ACADVersion.R2000;
 
-        string filename;
+        string filename, sort_mark;
 
         using( TransactionGroup txg = new TransactionGroup( doc ) )
         {
@@ -315,7 +315,13 @@ namespace ExportCncFab
             ElementId parentId = hostId;
             ElementId partId = e.Id;
 
-            filename = string.Format( "{0}_{1}",
+            sort_mark = exportParameters.GetSortMarkFor( e );
+
+            filename = (null == sort_mark)
+              ? string.Empty
+              : sort_mark + '_';
+
+            filename += string.Format( "{0}_{1}",
               parentId, partId );
 
             Element host = doc.GetElement( hostId );

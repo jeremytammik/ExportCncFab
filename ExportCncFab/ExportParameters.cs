@@ -285,5 +285,16 @@ namespace ExportCncFab
         t.Commit();
       }
     }
+
+    /// <summary>
+    /// Return the sort mark associated with the given 
+    /// element for insertion into the output filename
+    /// </summary>
+    public string GetSortMarkFor( Element e )
+    {
+      return (null != _definition_sort_mark)
+        ? e.get_Parameter( _definition_sort_mark ).AsString()
+        : null;
+    }
   }
 }
