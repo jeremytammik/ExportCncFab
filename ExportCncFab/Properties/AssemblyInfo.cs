@@ -42,6 +42,7 @@ using System.Runtime.InteropServices;
 // 2018-10-16 2019.0.0.0 flat migration to Revit 2019
 // 2020-12-01 2020.0.0.0 flat migration to Revit 2020
 // 2020-12-01 2021.0.0.0 flat migration to Revit 2021
+// 2020-12-01 2021.0.0.1 added support for CncFabSortMark shared parameter
 //
-[assembly: AssemblyVersion( "2021.0.0.0" )]
-[assembly: AssemblyFileVersion( "2021.0.0.0" )]
+[assembly: AssemblyVersion( "2021.0.0.1" )]
+[assembly: AssemblyFileVersion( "2021.0.0.1" )]

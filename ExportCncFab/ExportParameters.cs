@@ -23,6 +23,14 @@ namespace ExportCncFab
     const string _exported_first = "CncFabExportedFirst";
     const string _exported_last = "CncFabExportedLast";
 
+    /// <summary>
+    /// An optional sort mark can be added to elements.
+    /// The sort mark is inserted into the generated 
+    /// output filename, cf. GitHub issue #1:
+    /// https://github.com/jeremytammik/ExportCncFab/issues/1
+    /// </summary>
+    const string _sort_mark = "CncFabSortMark";
+
     //Guid _guid_is_exported;
     //Guid _guid_exported_first;
     //Guid _guid_exported_last;
@@ -34,6 +42,7 @@ namespace ExportCncFab
     Definition _definition_is_exported = null;
     Definition _definition_exported_first = null;
     Definition _definition_exported_last = null;
+    Definition _definition_sort_mark = null;
 
     Document _doc = null;
     List<ElementId> _ids = null;
@@ -77,6 +86,9 @@ namespace ExportCncFab
 
       _definition_exported_last = GetDefinition(
         e, _exported_last );
+
+      _definition_sort_mark = GetDefinition(
+        e, _sort_mark );
 
       if( IsValid )
       {
