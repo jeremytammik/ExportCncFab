@@ -13,6 +13,7 @@ Detailed articles describing various implementation aspects include:
 - [Driving CNC Fabrication and Shared Parameters](http://thebuildingcoder.typepad.com/blog/2013/12/driving-cnc-fabrication-and-shared-parameters.html)
 - [CNC Direct &ndash; Export Wall Parts to DXF and SAT](https://thebuildingcoder.typepad.com/blog/2015/06/cnc-direct-export-wall-parts-to-dxf-and-sat.html)
 - [Migration to Revit 2018](https://thebuildingcoder.typepad.com/blog/2018/01/areaload-force-direction-cmake-sdk-access.html#5)
+- [ExportCncFab `SortMark` Update](https://thebuildingcoder.typepad.com/blog/2020/12/simple-iupdater-and-other-tbc-updates.html#3)
 
 ## Author
 
