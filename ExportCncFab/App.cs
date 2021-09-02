@@ -1,10 +1,7 @@
 #region Namespaces
-using System;
-using System.Diagnostics;
 using System.IO;
 using System.Windows.Media.Imaging;
 using System.Reflection;
-using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.UI;
 #endregion
 
