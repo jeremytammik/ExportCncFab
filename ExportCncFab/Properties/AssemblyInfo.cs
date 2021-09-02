@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "Autodesk Inc." )]
 [assembly: AssemblyProduct( "Revit ExportCncFab Add-In" )]
-[assembly: AssemblyCopyright( "Copyright 2013-2020 (C) Jeremy Tammik Autodesk Inc." )]
+[assembly: AssemblyCopyright( "Copyright 2013-2021 (C) Jeremy Tammik Autodesk Inc." )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
@@ -43,6 +43,7 @@ using System.Runtime.InteropServices;
 // 2020-12-01 2020.0.0.0 flat migration to Revit 2020
 // 2020-12-01 2021.0.0.0 flat migration to Revit 2021
 // 2020-12-01 2021.0.0.1 added support for CncFabSortMark shared parameter
+// 2021-09-02 2022.0.0.0 flat migration to Revit 2022
 //
-[assembly: AssemblyVersion( "2021.0.0.1" )]
-[assembly: AssemblyFileVersion( "2021.0.0.1" )]
+[assembly: AssemblyVersion( "2022.0.0.0" )]
+[assembly: AssemblyFileVersion( "2022.0.0.0" )]
