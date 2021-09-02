@@ -170,7 +170,8 @@ namespace ExportCncFab
     static Definition CreateNewDefinition(
       DefinitionGroup group,
       string parameter_name,
-      ParameterType parameter_type )
+      //ParameterType parameter_type 2021
+      ForgeTypeId parameter_type ) // 2022
     {
       //return group.Definitions.Create( 
       //  parameter_name, parameter_type, true ); // 2014
@@ -261,7 +262,8 @@ namespace ExportCncFab
         Definition definition
           = group.Definitions.get_Item( _is_exported )
           //?? group.Definitions.Create( _is_exported, ParameterType.YesNo, true ); // 2014
-          ?? CreateNewDefinition( group, _is_exported, ParameterType.YesNo ); // 2015
+          //?? CreateNewDefinition( group, _is_exported, ParameterType.YesNo ); // 2015
+          ?? CreateNewDefinition( group, _is_exported, SpecTypeId.Boolean.YesNo ); // 2022
 
         doc.ParameterBindings.Insert( definition, binding,
           BuiltInParameterGroup.PG_GENERAL );
@@ -269,7 +271,8 @@ namespace ExportCncFab
         definition
           = group.Definitions.get_Item( _exported_first )
           //?? group.Definitions.Create( _exported_first, ParameterType.Text, true ); // 2014
-          ?? CreateNewDefinition( group, _exported_first, ParameterType.Text ); // 2015
+          //?? CreateNewDefinition( group, _exported_first, ParameterType.Text ); // 2015
+          ?? CreateNewDefinition( group, _exported_first, SpecTypeId.String.Text ); // 2022
 
         doc.ParameterBindings.Insert( definition, binding,
           BuiltInParameterGroup.PG_GENERAL );
@@ -277,7 +280,8 @@ namespace ExportCncFab
         definition
           = group.Definitions.get_Item( _exported_last )
           //?? group.Definitions.Create( _exported_last, ParameterType.Text, true ); // 2014
-          ?? CreateNewDefinition( group, _exported_last, ParameterType.Text ); // 2015
+          //?? CreateNewDefinition( group, _exported_last, ParameterType.Text ); // 2015
+          ?? CreateNewDefinition( group, _exported_last, SpecTypeId.String.Text ); // 2022
 
         doc.ParameterBindings.Insert( definition, binding,
           BuiltInParameterGroup.PG_GENERAL );

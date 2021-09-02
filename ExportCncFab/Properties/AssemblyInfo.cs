@@ -44,6 +44,7 @@ using System.Runtime.InteropServices;
 // 2020-12-01 2021.0.0.0 flat migration to Revit 2021
 // 2020-12-01 2021.0.0.1 added support for CncFabSortMark shared parameter
 // 2021-09-02 2022.0.0.0 flat migration to Revit 2022
+// 2021-09-02 2022.0.0.1 eliminated deprecated API usage of ParameterType
 //
-[assembly: AssemblyVersion( "2022.0.0.0" )]
-[assembly: AssemblyFileVersion( "2022.0.0.0" )]
+[assembly: AssemblyVersion( "2022.0.0.1" )]
+[assembly: AssemblyFileVersion( "2022.0.0.1" )]
