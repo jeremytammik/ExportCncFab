@@ -27,7 +27,7 @@ William Spier demonstrates running ExportCncFab in his 12-minute [Revit to CNC D
 
 The source code for this Revit add-in is published here for Revit API demonstration purposes only.
 For legal reasons, I cannot share the executable add-in in public. 
-Please feel free to grab the source code from GitHub and create the required add-in from that yourself, or ask a friend or coleague to create it for you.
+Please feel free to grab the source code from GitHub and create the required add-in from that yourself, or ask a friend or colleague to create it for you.
 
 ## Author
 
