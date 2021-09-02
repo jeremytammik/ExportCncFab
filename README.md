@@ -17,9 +17,11 @@ Detailed articles describing various implementation aspects include:
 
 ## Demonstration
 
-William Spier demonstrates running ExportCncFab in his 12-minute [Revit to CNC Direct YouTube recording](https://youtu.be/uNJ9RTppqoU):
+William Spier demonstrates running ExportCncFab in his 12-minute [Revit to CNC Direct YouTube recording](https://youtu.be/uNJ9RTppqoU).
 
+<!--
 <iframe width="854" height="480" src="https://www.youtube.com/embed/uNJ9RTppqoU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-->
 
 ## No Executable
 
