@@ -2,6 +2,15 @@
 
 Revit .NET API add-in to export Revit wall parts to DXF or SAT for CNC fabrication.
 
+This add-in demonstrates various useful aspects along the way, such as:
+
+- Implement the external application
+- Create ribbon panel and command push buttons
+- Load icons from assembly resources
+- Select wall parts and handle optional pre-selection
+- Export wall part elements to DWF or SAT
+- Manage, create and populate shared parameter values
+
 For more information, please refer to
 [The Building Coder](http://thebuildingcoder.typepad.com) and the 12-minute
 [Revit to CNC Direct YouTube video](https://www.youtube.com/watch?v=uNJ9RTppqoU).
