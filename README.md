@@ -1,6 +1,6 @@
 # ExportCncFab
 
-Revit .NET API add-in to export Revit wall parts to DXF or SAT for CNC fabrication.
+Revit C# .NET API add-in to export Revit wall parts to DXF or SAT for CNC fabrication.
 
 This add-in demonstrates various useful aspects along the way, such as:
 
