@@ -37,7 +37,7 @@ namespace ExportCncFab
             ElementId cid = cids.First<ElementId>();
 
             BuiltInCategory bic
-              = (BuiltInCategory) cid.IntegerValue;
+              = (BuiltInCategory) cid.Value;
 
             rc = ( BuiltInCategory.OST_Walls == bic );
           }
@@ -195,7 +195,7 @@ namespace ExportCncFab
           // Expected parent category is OST_Walls
 
           BuiltInCategory bic
-            = (BuiltInCategory) cid.IntegerValue;
+            = (BuiltInCategory) cid.Value;
 
           if( BuiltInCategory.OST_Walls != bic )
           {
@@ -331,7 +331,7 @@ namespace ExportCncFab
             Debug.Assert( ( host is Wall ) || ( host is Part ), "expected host element to be a wall or part" );
             Debug.Assert( null != host.Category, "expected host element to have a valid category" );
             //Debug.Assert( host.Category.Id.IntegerValue.Equals( (int) BuiltInCategory.OST_Walls ), "expected host element to have wall category" );
-            Debug.Assert( host.Category.Id.IntegerValue.Equals( (int) BuiltInCategory.OST_Walls ) || host.Category.Id.IntegerValue.Equals( (int) BuiltInCategory.OST_Parts ), "expected host element to have wall or part category" );
+            Debug.Assert( host.Category.Id.Value.Equals( (long) BuiltInCategory.OST_Walls ) || host.Category.Id.Value.Equals( (long) BuiltInCategory.OST_Parts ), "expected host element to have wall or part category" );
             Debug.Assert( ElementId.InvalidElementId != host.LevelId, "expected host element to have a valid level id" );
 
             if( ElementId.InvalidElementId != host.LevelId )
