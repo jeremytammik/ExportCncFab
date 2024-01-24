@@ -26,7 +26,8 @@ Detailed articles describing various implementation aspects include:
 
 ## Demonstration
 
-William Spier demonstrates running ExportCncFab in his 12-minute [Revit to CNC Direct YouTube recording](https://youtu.be/uNJ9RTppqoU).
+William Spier demonstrates running ExportCncFab in
+his 12-minute [Revit to CNC Direct YouTube recording](https://youtu.be/uNJ9RTppqoU).
 
 <!--
 <iframe width="854" height="480" src="https://www.youtube.com/embed/uNJ9RTppqoU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -43,7 +44,7 @@ Please feel free to grab the source code from GitHub and create the required add
 Jeremy Tammik,
 [The Building Coder](http://thebuildingcoder.typepad.com) and
 [The 3D Web Coder](http://the3dwebcoder.typepad.com),
-[Autodesk Platform Services](https://aps.autodesk.com/) Development,
+[Autodesk Platform Services APS](https://aps.autodesk.com/) Development,
 [ADN](http://www.autodesk.com/adn)
 [Open](http://www.autodesk.com/adnopen),
 [Autodesk Inc.](http://www.autodesk.com)
