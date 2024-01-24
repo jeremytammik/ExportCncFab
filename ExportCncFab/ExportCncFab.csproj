@@ -66,14 +66,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
-    <Reference Include="RevitAPI, Version=21.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Autodesk\Revit 2023\RevitAPI.dll</HintPath>
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2024\RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="RevitAPIUI, Version=21.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Autodesk\Revit 2023\RevitAPIUI.dll</HintPath>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2024\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -126,7 +124,7 @@
     <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2013\ExportCncFab.dll" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>copy "$(ProjectDir)ExportCncFab.addin" "$(AppData)\Autodesk\REVIT\Addins\2023"
-copy "$(ProjectDir)bin\debug\ExportCncFab.dll" "$(AppData)\Autodesk\REVIT\Addins\2023"</PostBuildEvent>
+    <PostBuildEvent>copy "$(ProjectDir)ExportCncFab.addin" "$(AppData)\Autodesk\REVIT\Addins\2024"
+copy "$(ProjectDir)bin\debug\ExportCncFab.dll" "$(AppData)\Autodesk\REVIT\Addins\2024"</PostBuildEvent>
   </PropertyGroup>
 </Project>
