@@ -43,7 +43,7 @@ Please feel free to grab the source code from GitHub and create the required add
 Jeremy Tammik,
 [The Building Coder](http://thebuildingcoder.typepad.com) and
 [The 3D Web Coder](http://the3dwebcoder.typepad.com),
-[Forge](http://forge.autodesk.com) [Platform](https://developer.autodesk.com) Development,
+[Autodesk Platform Services](https://aps.autodesk.com/) Development,
 [ADN](http://www.autodesk.com/adn)
 [Open](http://www.autodesk.com/adnopen),
 [Autodesk Inc.](http://www.autodesk.com)
