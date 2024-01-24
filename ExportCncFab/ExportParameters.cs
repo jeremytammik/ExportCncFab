@@ -265,8 +265,12 @@ namespace ExportCncFab
           //?? CreateNewDefinition( group, _is_exported, ParameterType.YesNo ); // 2015
           ?? CreateNewDefinition( group, _is_exported, SpecTypeId.Boolean.YesNo ); // 2022
 
-        doc.ParameterBindings.Insert( definition, binding,
-          BuiltInParameterGroup.PG_GENERAL );
+        //doc.ParameterBindings.Insert( definition, binding, BuiltInParameterGroup.PG_GENERAL ); // 2023
+        // Warning CS0618  'BindingMap.Insert(Definition, Binding, BuiltInParameterGroup)' is obsolete:
+        // This method is deprecated in Revit 2024 and may be removed in a future version of Revit.
+        // Please use the `Insert(Definition, Binding, ForgeTypeId)` method instead.' 
+
+        doc.ParameterBindings.Insert(definition, binding, GroupTypeId.General); // 2024
 
         definition
           = group.Definitions.get_Item( _exported_first )
@@ -274,8 +278,12 @@ namespace ExportCncFab
           //?? CreateNewDefinition( group, _exported_first, ParameterType.Text ); // 2015
           ?? CreateNewDefinition( group, _exported_first, SpecTypeId.String.Text ); // 2022
 
-        doc.ParameterBindings.Insert( definition, binding,
-          BuiltInParameterGroup.PG_GENERAL );
+        //doc.ParameterBindings.Insert( definition, binding, BuiltInParameterGroup.PG_GENERAL ); // 2023 
+        // Warning CS0618  'BindingMap.Insert(Definition, Binding, BuiltInParameterGroup)' is obsolete:
+        // This method is deprecated in Revit 2024 and may be removed in a future version of Revit.
+        // Please use the `Insert(Definition, Binding, ForgeTypeId)` method instead.' 
+
+        doc.ParameterBindings.Insert( definition, binding, GroupTypeId.General ); // 2024
 
         definition
           = group.Definitions.get_Item( _exported_last )
@@ -283,8 +291,12 @@ namespace ExportCncFab
           //?? CreateNewDefinition( group, _exported_last, ParameterType.Text ); // 2015
           ?? CreateNewDefinition( group, _exported_last, SpecTypeId.String.Text ); // 2022
 
-        doc.ParameterBindings.Insert( definition, binding,
-          BuiltInParameterGroup.PG_GENERAL );
+        //doc.ParameterBindings.Insert( definition, binding, BuiltInParameterGroup.PG_GENERAL ); // 2023
+        // Warning CS0618  'BindingMap.Insert(Definition, Binding, BuiltInParameterGroup)' is obsolete:
+        // This method is deprecated in Revit 2024 and may be removed in a future version of Revit.
+        // Please use the `Insert(Definition, Binding, ForgeTypeId)` method instead.' 
+
+        doc.ParameterBindings.Insert(definition, binding, GroupTypeId.General); // 2024
 
         t.Commit();
       }
